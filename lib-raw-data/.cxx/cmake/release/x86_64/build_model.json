@@ -1,0 +1,78 @@
+{
+  "variant": {
+    "module": {
+      "rootBuildGradleFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1",
+      "sdkFolder": "/Users/neerajchaudhary/Library/Android/sdk",
+      "isNativeCompilerSettingsCacheEnabled": false,
+      "isBuildOnlyTargetAbiEnabled": true,
+      "splitsAbiFilterSet": [],
+      "intermediatesFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/build/intermediates",
+      "gradleModulePathName": ":lib-raw-data",
+      "moduleRootFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data",
+      "makeFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/CMakeLists.txt",
+      "buildSystem": "CMAKE",
+      "compilerSettingsCacheFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/.cxx",
+      "cxxFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx",
+      "ndkFolder": "/Users/neerajchaudhary/Library/Android/sdk/ndk/22.0.7026061",
+      "ndkVersion": "22.0.7026061",
+      "ndkSupportedAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "ndkDefaultAbiList": [
+        "ARMEABI_V7A",
+        "ARM64_V8A",
+        "X86",
+        "X86_64"
+      ],
+      "cmakeToolchainFile": "."
+    },
+    "buildSystemArgumentList": [
+      "-DANDROID_STL\u003dc++_static",
+      "-DANDROID_PLATFORM\u003dandroid-15",
+      "-DANDROID_TOOLCHAIN\u003dclang",
+      "-DANDROID_STL_FORCE_FEATURES\u003dOFF",
+      "-DANDROID_ARM_NEON\u003dTRUE"
+    ],
+    "cFlagList": [],
+    "cppFlagsList": [
+      "-std\u003dc++11"
+    ],
+    "variantName": "release",
+    "soFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/build/intermediates/cmake/release/lib",
+    "objFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/build/intermediates/cmake/release/obj",
+    "jsonFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release",
+    "gradleBuildOutputFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release",
+    "isDebuggableEnabled": false,
+    "validAbiList": [
+      "ARMEABI_V7A",
+      "ARM64_V8A",
+      "X86",
+      "X86_64"
+    ],
+    "buildTargetSet": []
+  },
+  "abi": "X86_64",
+  "abiPlatformVersion": 19,
+  "cxxBuildFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64",
+  "jsonFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/android_gradle_build.json",
+  "gradleBuildOutputFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64",
+  "objFolder": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/build/intermediates/cmake/release/obj/x86_64",
+  "buildCommandFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/build_command.txt",
+  "buildOutputFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/build_output.txt",
+  "modelOutputFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/build_model.json",
+  "cmake": {
+    "cmakeListsWrapperFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/CMakeLists.txt",
+    "toolchainWrapperFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/android_gradle_build.toolchain.cmake",
+    "buildGenerationStateFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/build_generation_state.json",
+    "cacheKeyFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/compiler_cache_key.json",
+    "compilerCacheUseFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/compiler_cache_use.json",
+    "compilerCacheWriteFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/compiler_cache_write.json",
+    "toolchainSettingsFromCacheFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cxx/release/x86_64/compiler_settings_cache.cmake",
+    "cmakeWrappingBaseFolder": "."
+  },
+  "jsonGenerationLoggingRecordFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/json_generation_record.json",
+  "compileCommandsJsonFile": "/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/release/x86_64/compile_commands.json"
+}
