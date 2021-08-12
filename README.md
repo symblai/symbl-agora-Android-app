@@ -1,12 +1,12 @@
+# Symbl Agora Android App
 
+Symbl's APIs empower developers to enable: 
+- **Real-time** analysis of free-flowing discussions to automatically surface highly relevant summary discussion topics, contextual insights, suggestive action items, follow-ups, decisions, and questions.
+- **Voice APIs** that makes it easy to add AI-powered conversation intelligence to either [telephony][telephony] or [WebSocket][websocket] interfaces.
+- **Conversation APIs** that provide a REST interface for managing and processing your conversation data.
+- **Summary UI** with a fully customizable and editable reference experience that indexes a searchable transcript and shows generated actionable insights, topics, timecodes, and speaker information.
 
-
-# Symbl's APIs empower developers to enable:
-
-Real-time analysis of free-flowing discussions to automatically surface highly relevant summary discussion topics, contextual insights, suggestive action items, follow-ups, decisions, and questions.\
-Voice APIs that makes it easy to add AI-powered conversational intelligence to either telephony or WebSocket interfaces.
-Conversation APIs that provide a REST interface for managing and processing your conversation data.
-Summary UI with a fully customizable and editable reference experience that indexes a searchable transcript and shows generated actionable insights, topics, timecodes, and speaker information.
+<hr />
 
 # Symbl Agora Android App
 This tutorial enables you to quickly get started with adding Symbl.ai to an Android app to enable real-time video calls, voice calls, or interactive broadcasting using Agora with a WebSocket.
@@ -26,6 +26,7 @@ With your sample app you can:
 * Android device (e.g. Nexus 5X). A real device is recommended because some simulators have missing functionality or lack the performance necessary to run the sample.
 * Agora Account
 * Symbl Account
+
 ## Quick Start
 This section shows you how to prepare, build, and run the sample application.
 
@@ -61,9 +62,22 @@ Open project with Android Studio, connect your Android device, build and run.
 
 Or use ```Gradle``` to build and run
 
-### Community
-If you have any questions, feel free to reach out to us at devrelations@symbl.ai or thorugh our Community Slack or our developer community
+## Conclusion
+Your application runs on the Android operating system.
 
-This guide is actively developed, and we love to hear from you! Please feel free to create an issue or open a pull request with your questions, comments, suggestions and feedback. If you liked our integration guide, please star our repo!
+## Community
 
-This library is released under the MIT License
+If you have any questions, feel free to reach out to us at devrelations@symbl.ai or through our [Community Slack][slack] or our [forum][developer_community].
+
+This guide is actively developed, and we love to hear from you! Please feel free to [create an issue][issues] or [open a pull request][pulls] with your questions, comments, suggestions and feedback.  If you liked our integration guide, please star our repo!
+
+This library is released under the [Apache License][license]
+
+[license]: LICENSE.txt
+[telephony]: https://docs.symbl.ai/docs/telephony/overview/post-api
+[websocket]: https://docs.symbl.ai/docs/streamingapi/overview/introduction
+[developer_community]: https://community.symbl.ai/?_ga=2.134156042.526040298.1609788827-1505817196.1609788827
+[slack]: https://join.slack.com/t/symbldotai/shared_invite/zt-4sic2s11-D3x496pll8UHSJ89cm78CA
+[signup]: https://platform.symbl.ai/?_ga=2.63499307.526040298.1609788827-1505817196.1609788827
+[issues]: https://github.com/symblai/symbl-for-zoom/issues
+[pulls]: https://github.com/symblai/symbl-for-zoom/pulls
