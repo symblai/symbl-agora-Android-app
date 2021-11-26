@@ -1,17 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="transcriptItem">
+        <item name="cardBackgroundColor">#99D1D8</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="cardElevation">10dp</item>
     </style>
 
-    <style name="FullScreenVideoTheme" parent="AppTheme">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="android:windowFullscreen">true</item>
-        <item name="android:windowContentOverlay">@null</item>
+    <style name="insightsItem">
+        <item name="cardBackgroundColor">#9AD69D</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="cardElevation">10dp</item>
     </style>
+
+    <style name="topicsItem">
+        <item name="cardBackgroundColor">#E4B672</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="vocabularyItem">
+        <item name="cardBackgroundColor">#C3CBF6</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:layout_marginLeft">1dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_marginBottom">1dp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+    <style name="trackersItem">
+        <item name="cardBackgroundColor">#93D2EF</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="cardCornerRadius">30dp</item>
+        <item name="cardElevation">10dp</item>
+    </style>
+
+    <style name="joinButton">
+        <item name="android:backgroundTint">#89C149</item>
+        <item name="shapeAppearanceOverlay">@style/roundedButtonShapeAppearance</item>
+    </style>
+
+    <style name="createButton">
+        <item name="android:backgroundTint">#418BC6</item>
+        <item name="shapeAppearanceOverlay">@style/roundedButtonShapeAppearance</item>
+    </style>
+
+    <style name="savePreferencesButton">
+        <item name="android:backgroundTint">#009688</item>
+        <item name="shapeAppearanceOverlay">@style/roundedButtonShapeAppearance</item>
+    </style>
+
+    <style name="roundedButtonShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">30dp</item>
+    </style>
+
+    <style name="profileImage">
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">180dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="cardCornerRadius">100dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
 </resources>

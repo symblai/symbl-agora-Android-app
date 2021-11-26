@@ -1,15 +1,66 @@
 <resources>
-    <string name="app_name">Agora Tutorial</string>
+    <string name="app_name">Symbl Video Call</string>
+    <string name="agora">Agora</string>
+    <string name="powered_by">Powered by</string>
+    <string name="title_activity_result_tabs">ResultTabs</string>
+    <string name="symbl_logo_description">Symbl Logo</string>
+    <string name="create_join_room_description">Create or join room to start the meeting and get realtime conversational insights</string>
+    <string name="create_room_description">Create room to start the meeting and get realtime conversational insights</string>
+    <string name="create_trackers_description">Create tracker to track the meeting conversations in real time</string>
 
-    <!-- PLEASE KEEP THIS App ID IN SAFE PLACE -->
-    <!-- Get your own App ID at https://dashboard.agora.io/ -->
-    <!-- After you entered the App ID, remove <##> outside of Your App ID -->
-    <string name="agora_app_id"></string>
-    <string name="symbl_app_id"></string>
-    <string name="symbl_app_secret"></string>
-    <string name="agora_channel"></string>
-    <!-- Obtain a temp Access Token at https://dashboard.agora.io -->
-    <!-- You will need to deploy your own token server for production release -->
-    <!-- Leave this value empty if Security keys/Token is not enabled for your project -->
-    <string name="agora_access_token"></string>
+    <string name="string_enable">Enable</string>
+    <string name="string_disable">Disable</string>
+    <string name="support_char" translatable="false">qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890 !#$%()+-:;&lt;=.>?@[]^_{}|~,&amp;</string>
+    <string name="symbl_app_id">33646b47504f7237676d4e72475a7a38436f45395277595272597545686c4479</string>
+    <string name="symbl_app_secret">36474839764c6361706676514566695f3670555f66515a752d347443572d44343231796f73465672315679523437394e726b66763432647053336c3872724c49</string>
+    <string name="symbl_platform_url">api-agora-1.symbl.ai</string>
+    <string name="symbl_token_api">https://api.symbl.ai/oauth2/token:generate</string>
+    <string name="symbl_token_token_timeout_ms">20000</string>
+    <string name="symbl_meeting_language_code">en-US</string>
+    <string name="symbl_meeting_encoding">LINEAR16</string>
+    <string name="symbl_meeting_sampleRateHertz">44100</string>
+    <string name="symbl_confidence_threshold">0.5</string>
+
+    <string name="agora_customer_app_id">b79ce05773df43ac9211244ed671db20</string>
+    <string name="agora_token_value">006b79ce05773df43ac9211244ed671db20IACQXBypwmX5DrQTBoAAgdVUhSi4+8Hm8HP0kspdHzT4k2d+1gUAAAAAEABKpBteNjpkYQEAAQA2OmRh</string>
+
+    <string name="mute">Mute</string>
+    <string name="unMute">Unmute</string>
+    <string name="disconnect">Leave</string>
+    <string name="transcript">Transcript</string>
+    <string name="insight">Insight</string>
+    <string name="timestamp">04:30 PM</string>
+    <string name="createRoomMessage">Don\'t have a room?</string>
+    <string name="create">Create</string>
+    <string name="join_room">Join Room</string>
+    <string name="room_name">Room Name</string>
+    <string name="create_room">Create Room</string>
+    <string name="room_validity">Room Validity</string>
+    <string name="disconnect_call_description">Leave</string>
+    <string name="mute_unmute_description">Mute/UnMute</string>
+    <string name="switch_camera_description">Switch Camera</string>
+    <string name="username">Username</string>
+    <string name="trackers">Trackers</string>
+    <string name="redaction_string">Redaction String</string>
+    <string name="save">Save</string>
+    <string name="preferences">Preferences</string>
+    <string name="email">Email</string>
+    <string name="profile_pic">Profile Pic</string>
+    <string name="app_preferences">app-preferences</string>
+    <string name="empty_json">{}</string>
+    <string name="topic">Topic</string>
+    <string name="tracker_name">Tracker Name</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="add_icon">Add Icon</string>
+    <string name="create_tracker">Create</string>
+    <string name="insightType">Question</string>
+    <string name="assignee">Assignee</string>
+    <string name="tracker">Tracker</string>
+    <string name="follow_ups">Follow Ups</string>
+    <string name="questions">Questions</string>
+    <string name="action_items">Action Items</string>
+    <string name="symbl_powers_description">Select powers for realtime conversations</string>
+    <string name="redaction">Redaction</string>
+    <string name="offset">Offset: </string>
+    <string name="offsetText">123</string>
 </resources>

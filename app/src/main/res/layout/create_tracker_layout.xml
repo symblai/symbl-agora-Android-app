@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/create_tracker_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardHolder"
+        android:layout_width="289dp"
+        android:layout_height="426dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/createTrackerDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_trackers_description"
+            app:layout_constraintBottom_toTopOf="@+id/trackerName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/trackerName"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="Tracker Name"
+            android:background="@drawable/room_name_text_box_style"
+            android:ems="10"
+            android:hint="@string/tracker_name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createTrackerDescription" />
+
+        <EditText
+            android:id="@+id/vocabularyText"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="16dp"
+            android:autofillHints="Vocabulary"
+            android:background="@drawable/room_name_text_box_style"
+            android:ems="10"
+            android:hint="@string/vocabulary"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/trackerName" />
+
+        <ImageView
+            android:id="@+id/addVocabularyButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/add_icon"
+            android:src="@drawable/add_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/vocabularyText"
+            app:layout_constraintEnd_toEndOf="@+id/vocabularyText"
+            app:layout_constraintTop_toTopOf="@+id/vocabularyText" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vocabularyList"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vocabularyText" />
+
+        <Button
+            android:id="@+id/createTrackerButton"
+            style="@style/createButton"
+            android:layout_width="wrap_content"
+            android:layout_height="57dp"
+            android:text="@string/create_tracker"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vocabularyList"
+            app:layout_constraintVertical_bias="0.483" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

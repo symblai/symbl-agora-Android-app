@@ -1,10 +1,10 @@
-rootProject.name='Agora-Android-Tutorial-1to1'
-include ':lib-switch-external-video'
-
-include ':lib-component'
-
-include ':lib-screensharing'
-include ':lib-push-externalvideo'
-include ':app', ':logger'
-include ':lib-stream-encrypt'
-include ':lib-raw-data'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "My Application"
+include ':app'
