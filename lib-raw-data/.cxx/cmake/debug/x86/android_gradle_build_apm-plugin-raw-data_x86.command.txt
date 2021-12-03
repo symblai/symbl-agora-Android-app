@@ -1,8 +1,0 @@
-Executable : /Users/neerajchaudhary/Library/Android/sdk/cmake/3.6.4111459/bin/cmake
-arguments : 
---build
-/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/debug/x86
---target
-apm-plugin-raw-data
-jvmArgs : 
-

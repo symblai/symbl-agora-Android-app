@@ -1,3 +1,0 @@
-/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir
-/Users/neerajchaudhary/Desktop/Basic-Video-Call-master/One-to-One-Video/Agora-Android-Tutorial-1to1/lib-raw-data/.cxx/cmake/debug/armeabi-v7a/CMakeFiles/apm-plugin-raw-data.dir

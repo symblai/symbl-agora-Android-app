@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.CreateRoom">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardHolder"
+        android:layout_width="311dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/symblLogoIcon"
+            android:layout_width="98dp"
+            android:layout_height="63dp"
+            android:contentDescription="@string/symbl_logo_description"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:padding="10dp"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/symbl_logo_icon" />
+
+        <TextView
+            android:id="@+id/createRoomDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_room_description"
+            app:layout_constraintBottom_toTopOf="@+id/roomName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/symblLogoIcon" />
+
+        <EditText
+            android:id="@+id/roomName"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:layout_marginTop="20dp"
+            android:autofillHints="Room Name"
+            android:background="@drawable/room_name_text_box_style"
+            android:ems="10"
+            android:hint="@string/room_name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/createRoomDescription" />
+
+        <TextView
+            android:id="@+id/symblPowers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/symbl_powers_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/roomName" />
+
+        <CheckBox
+            android:id="@+id/action_items_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:checked="true"
+            android:text="@string/action_items"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/symblPowers" />
+
+        <CheckBox
+            android:id="@+id/questions_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:checked="true"
+            android:text="@string/questions"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/action_items_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/symblPowers" />
+
+        <CheckBox
+            android:id="@+id/follow_up_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:checked="true"
+            android:text="@string/follow_ups"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/questions_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/symblPowers" />
+
+        <CheckBox
+            android:id="@+id/trackers_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:checked="true"
+            android:text="@string/trackers"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/action_items_checkbox" />
+
+        <CheckBox
+            android:id="@+id/redaction_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:checked="true"
+            android:text="@string/redaction"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/trackers_checkbox"
+            app:layout_constraintTop_toBottomOf="@+id/questions_checkbox" />
+
+        <Button
+            android:id="@+id/createRoomButton"
+            style="@style/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:text="@string/create_room"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
