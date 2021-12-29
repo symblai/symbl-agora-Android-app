@@ -29,7 +29,7 @@ import com.example.myapplication.services.SymblService;
 
 import org.json.JSONObject;
 
-import io.agora.extension.symblai.ExtensionManager;
+import ai.symbl.android.extension.ExtensionManager;
 import io.agora.rtc2.Constants;
 import io.agora.rtc2.IRtcEngineEventHandler;
 import io.agora.rtc2.RtcEngine;

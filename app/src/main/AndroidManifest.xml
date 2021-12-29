@@ -17,7 +17,7 @@
         <activity
             android:name=".activities.app_preferences.AppPreferences"
             android:exported="true"
-            android:parentActivityName=".activities.Dashboard"/>
+            android:parentActivityName=".activities.Dashboard" />
         <activity
             android:name=".activities.CreateRoom"
             android:exported="false"

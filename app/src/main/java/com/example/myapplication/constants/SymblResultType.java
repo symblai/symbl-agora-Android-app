@@ -16,12 +16,6 @@ public enum SymblResultType {
 
     private String value;
 
-    @NonNull
-    @Override
-    public String toString() {
-        return value;
-    }
-
     public static SymblResultType fromValue(String value) {
         for (SymblResultType type : values()) {
             if (type.toString().equalsIgnoreCase(value)) {
@@ -29,5 +23,11 @@ public enum SymblResultType {
             }
         }
         throw new IllegalArgumentException(String.format("Result type %s is not configured", value));
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return value;
     }
 }
