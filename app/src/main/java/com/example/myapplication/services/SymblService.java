@@ -9,17 +9,16 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import io.agora.extension.symblai.model.request.ApiConfig;
-import io.agora.extension.symblai.model.request.RealtimeAPIConfig;
-import io.agora.extension.symblai.model.request.RealtimeStartRequest;
-import io.agora.extension.symblai.model.request.Redaction;
-import io.agora.extension.symblai.model.request.Speaker;
-import io.agora.extension.symblai.model.request.SpeechRecognition;
-import io.agora.extension.symblai.model.request.SymblPluginConfig;
-import io.agora.extension.symblai.model.request.Tracker;
+import ai.symbl.android.extension.model.request.ApiConfig;
+import ai.symbl.android.extension.model.request.RealtimeAPIConfig;
+import ai.symbl.android.extension.model.request.RealtimeStartRequest;
+import ai.symbl.android.extension.model.request.Redaction;
+import ai.symbl.android.extension.model.request.Speaker;
+import ai.symbl.android.extension.model.request.SpeechRecognition;
+import ai.symbl.android.extension.model.request.SymblPluginConfig;
+import ai.symbl.android.extension.model.request.Tracker;
 
 public class SymblService {
 

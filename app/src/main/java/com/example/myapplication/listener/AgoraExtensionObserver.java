@@ -20,8 +20,8 @@ import com.google.gson.Gson;
 
 import java.util.Date;
 
-import io.agora.extension.symblai.SymblAIFilterManager;
-import io.agora.extension.symblai.model.response.SymblResponse;
+import ai.symbl.android.extension.SymblAIFilterManager;
+import ai.symbl.android.extension.model.response.SymblResponse;
 import io.agora.rtc2.IMediaExtensionObserver;
 
 public class AgoraExtensionObserver implements IMediaExtensionObserver {
@@ -121,12 +121,12 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
         SymblResultType type = getResultType(symblResult);
         switch (type) {
             case TOPIC_RESPONSE:
-                for (io.agora.extension.symblai.model.response.topic.Topic topic : symblResult.getTopics()) {
+                for (ai.symbl.android.extension.model.response.topic.Topic topic : symblResult.getTopics()) {
                     results.add(new Topic(topic.getId(), topic.getPhrases()));
                 }
                 break;
             case INSIGHT_RESPONSE:
-                for (io.agora.extension.symblai.model.response.actionitem.Insight insight : symblResult.getInsights()) {
+                for (ai.symbl.android.extension.model.response.actionitem.Insight insight : symblResult.getInsights()) {
                     results.add(new Insight(insight.getId(), insight.getPayload().getContent(), insight.getType(), insight.getAssignee().getName()));
                 }
                 break;

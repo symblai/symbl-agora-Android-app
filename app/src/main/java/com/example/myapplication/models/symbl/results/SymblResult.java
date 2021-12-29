@@ -2,8 +2,8 @@ package com.example.myapplication.models.symbl.results;
 
 import java.util.List;
 
-import io.agora.extension.symblai.model.response.actionitem.Insight;
-import io.agora.extension.symblai.model.response.topic.Topic;
+import ai.symbl.android.extension.model.response.actionitem.Insight;
+import ai.symbl.android.extension.model.response.topic.Topic;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -37,7 +37,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation files('/Users/vishalsharma/Desktop/Symbl/Docs/Agora/Android APK files/Depedencies/agora-symblai-filter-debug.aar')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -47,6 +46,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.7'
 
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+
+    // Symbl Extension
+    implementation 'ai.symbl:android.extension:0.0.2'
 
     // Dependencies required for Agora SDK
     implementation fileTree(include: ['*.jar'], dir: 'libs')

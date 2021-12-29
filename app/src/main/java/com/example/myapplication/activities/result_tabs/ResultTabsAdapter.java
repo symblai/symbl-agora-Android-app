@@ -12,7 +12,6 @@ import com.example.myapplication.activities.result_tabs.tabs.transcripts.Transcr
 import com.example.myapplication.models.results.Results;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ResultTabsAdapter extends FragmentStateAdapter {
