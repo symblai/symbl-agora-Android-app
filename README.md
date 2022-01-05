@@ -121,7 +121,6 @@ speechRecognition.setSampleRateHertz(Double.parseDouble("<symbl_meeting_sampleRa
    }
 }
 ```
-
 7. The seventh step is to update the `strings.xml` file with values for the following:
 1. `symbl_app_id`
 2. `symbl_app_secret`
@@ -158,8 +157,7 @@ This library is released under the [MIT License][license]
 [telephony]: https://docs.symbl.ai/docs/telephony/overview/post-api
 [websocket]: https://docs.symbl.ai/docs/streamingapi/overview/introduction
 [console]: https:console.agora.io
-[slack]: https://join.slack.com/t/symbldotai/shared_invite/
-zt-4sic2s11-D3x496pll8UHSJ89cm78CA
+[slack]: https://join.slack.com/t/symbldotai/shared_invite/zt-4sic2s11-D3x496pll8UHSJ89cm78CA
 [signup]: https://platform.symbl.ai/?_ga=2.90794201.232722623.1641351522-1406598850.1641351522#/signup
 [issues]: https://github.com/symblai/symbl-agora-Android-app/issues
 [pulls]: https://github.com/symblai/symbl-agora-Android-app/pulls
