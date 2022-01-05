@@ -35,7 +35,7 @@ The Android app is a sample application designed to demonstrate how you implemen
 * Agora Account [Agora](https://sso.agora.io/en/v3/signup)
 
 ## Setup and Deploy
-1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace](https://console.agora.io/marketplace). The activation process
+1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace](https://console.agora.io/marketplace). Activate the app.
 
 2. The second step to getting setup is to [sign up][signup] on both platforms, [Symbl][signup]'s and [Agora](https://sso.agora.io/en/v3/signup)'s. 
 
