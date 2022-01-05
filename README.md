@@ -23,7 +23,7 @@ Symbl's APIs empower developers to enable:
 
 ## Introduction
 
-Through its partnership with Agora.io, Symbl.ai provides developers a Symbl.ai [Extension][symbl_extension] in the Agora.io Extension's Marketplace. The Symbl.ai Extension enables Android developers to transform their existing Agora.ios voice, video, or text messaging apps into the next level of bleeding edge technology with Symbl.ai's Conversation Intelligence APIs. 
+Through its partnership with Agora.io, Symbl.ai provides developers a Symbl.ai [Extension][symbl_extension] in the Agora.io Extension's [Marketplace][marketplace]. The Symbl.ai Extension enables Android developers to transform their existing Agora.ios voice, video, or text messaging apps into the next level of bleeding edge technology with Symbl.ai's Conversation Intelligence APIs. 
 
 In an effort to assist developers with digitally transforming their Agora.io voice, video or text messaging apps with Symbl.ai's Conversation Intelligence APIs, Symbl.a is hosting the following Android app, which is a sample application designed to demonstrate how you implement Symbl.ai's Conversation Intelligence APIs into an Android application with Agora.io.
 
