@@ -1,6 +1,5 @@
 # Symbl Agora Demo App
 
-
 [![Websocket](https://img.shields.io/badge/symbl-websocket-brightgreen)](https://docs.symbl.ai/docs/streamingapi/overview/introduction)
 
 Symbl's APIs empower developers to enable: 
@@ -122,15 +121,16 @@ speechRecognition.setSampleRateHertz(Double.parseDouble("<symbl_meeting_sampleRa
 }
 ```
 7. The seventh step is to update the `strings.xml` file with values for the following:
-1. `symbl_app_id`
-2. `symbl_app_secret`
-3. `symbl_platform_url`
-4. `symbl_token_api`
-5. `symbl_token_token_timeout_ms`
-6. `symbl_meeting_language-code`
-7. `symbl_meeting_encoding`
-8. `symbl_meeting_sampleRateHertz`
-9. `symbl_confidence_threshold`
+
+* `symbl_app_id`
+*  `symbl_app_secret`
+*  `symbl_platform_url`
+*  `symbl_token_api`
+*  `symbl_token_token_timeout_ms`
+*  `symbl_meeting_language-code`
+*  `symbl_meeting_encoding`
+*  `symbl_meeting_sampleRateHertz`
+*  `symbl_confidence_threshold`
 
 After updating those strings with values, the next step is to build the project. 
 
@@ -143,7 +143,9 @@ implementation files('/Users/User/Desktop/Symbl/Docs/Agora/Depedencies/agora-sym
 
 ## Conclusion 
 
-Symbl.ai's Extension for the Agora.io marketplace ensures developers have the power to create Android apps with features from its Conversation Intelligence API platform. Although Symbl.ai's Extension is operative for Android, Symbl.ai is open to contributions from the community for iOS. Symbl.ai, however, does have a web app for Agora.io that welcomes contributions from the community. 
+Symbl.ai's Extension for the Agora.io marketplace ensures developers have the power to create Android apps with features from its Conversation Intelligence API platform. 
+
+Although Symbl.ai's Extension is operative for Android, Symbl.ai is open to contributions from the community for iOS. Symbl.ai, however, does have a web app for Agora.io that welcomes contributions from the community. 
 
 ## Community
 
