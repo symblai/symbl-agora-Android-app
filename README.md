@@ -23,7 +23,11 @@ Symbl's APIs empower developers to enable:
 
 ## Introduction
 
-The Android app is a sample application designed to demonstrate how you implement Symbl.ai's Conversation Intelligence APIs into an Android application with Agora.io.
+Through its partnership with Agora.io, Symbl.ai provides developers a Symbl.ai [Extension][symbl_extension] in the Agora.io Extension's Marketplace. The Symbl.ai Extension enables Android developers to transform their existing Agora.ios voice, video, or text messaging apps into the next level of bleeding edge technology with Symbl.ai's Conversation Intelligence APIs. 
+
+In an effort to assist developers with digitally transforming their Agora.io voice, video or text messaging apps with Symbl.ai's Conversation Intelligence APIs, Symbl.a is hosting the following Android app, which is a sample application designed to demonstrate how you implement Symbl.ai's Conversation Intelligence APIs into an Android application with Agora.io.
+
+It is merely for demonstration purposes only but any one is free to refactor the application for their own particular use-cases. 
 
 ### Pre-requisites
 
@@ -35,7 +39,7 @@ The Android app is a sample application designed to demonstrate how you implemen
 * Agora Account [Agora](https://sso.agora.io/en/v3/signup)
 
 ## Setup and Deploy
-1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace](https://console.agora.io/marketplace). Activate the app.
+1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console. After signing up on the console, activate your app.
 
 2. The second step to getting setup is to [sign up][signup] on both platforms, [Symbl][signup]'s and [Agora](https://sso.agora.io/en/v3/signup)'s. 
 
@@ -61,14 +65,11 @@ Add your credentials for Agora.io here:
 
 ![gradle_notification](./resources/gradle_notification.png)
 
-After updating those strings with values, the next step is to build the project. 
+If you successfully built the project, you find the `.apk` after clicking on `locate` in the notification. 
 
 ## Dependencies
-There is a dependency you should update according to the location of your download for the the `agora-symblai-filter-debug.aar`. Navigate to the `build.gradle` file where there is line within the dependencies for an `implementation files()`. Update the path to your own path. 
 
-```Java
-implementation files('/Users/User/Desktop/Symbl/Docs/Agora/Depedencies/agora-symblai-filter-debug.aar')
-```
+Since the sample app comes pre-loaded with all of its dependencies, you do not need to upload any dependencies. 
 
 ## Conclusion 
 
@@ -88,6 +89,8 @@ This library is released under the [MIT License][license]
 [telephony]: https://docs.symbl.ai/docs/telephony/overview/post-api
 [websocket]: https://docs.symbl.ai/docs/streamingapi/overview/introduction
 [console]: https:console.agora.io
+[marketplace]: https://www.agora.io/en/agora-extensions-marketplace/
+[symbl_extension]: https://www.agora.io/en/agora-extensions-marketplace/symbl-transcription-conversation-analytics/
 [slack]: https://join.slack.com/t/symbldotai/shared_invite/zt-4sic2s11-D3x496pll8UHSJ89cm78CA
 [signup]: https://platform.symbl.ai/?_ga=2.90794201.232722623.1641351522-1406598850.1641351522#/signup
 [issues]: https://github.com/symblai/symbl-agora-Android-app/issues
