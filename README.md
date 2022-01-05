@@ -39,98 +39,25 @@ The Android app is a sample application designed to demonstrate how you implemen
 
 2. The second step to getting setup is to [sign up][signup] on both platforms, [Symbl][signup]'s and [Agora](https://sso.agora.io/en/v3/signup)'s. 
 
-3. The third step is to clone the repo. 
+3. The third step is to clone the repo. Here is the link: 
 
-4. The fourth step is to download the Symbl.ai [Extension](https://cdn-agora-.symbl.ai/agora-symblai-filter-debug.aar). After downloading, add the Symbl Extension to your dependency. Update your `build.gradle`: 
-
-```java
-implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-implementation 'org.java-websocket:Java-WebSocket:1.5.1'
-implementation 'ai.symbl:android.extension:0.0.2'
+```bash
+git clone git@github.com:symblai/symbl-agora-Android-app.git
 ```
 
-5. The firth step is to implement the interface `io.agora.rtc2.IMediaExtensionObserver`
+7. The fourth step is to update the `strings.xml` file with values for the following:
 
-```java
-public class MainActivity extends AppCompatActivity implements io.agora.rtc2.IMediaExtensionObserver {}
-```
-6. The sixth step is to add the following method to set all the necessary information to initialize the Symbl configuration. You can find description for the parameters used in the table below:
-
-```java
-private void setSymblPluginConfigs(JSONObject pluginParams) throws JSONException {
-   try {
-       // Symbl main extension config objects
-       SymblPluginConfig symblParams = new SymblPluginConfig();
-
-       // Set the Symbl API Configuration
-       ApiConfig apiConfig = new ApiConfig();
-       apiConfig.setAppId("<symbl_app_id>");
-       apiConfig.setAppSecret("<symbl_app_secret>");
-       apiConfig.setTokenApi("https://api.symbl.ai/oauth2/token:generate");
-       apiConfig.setSymblPlatformUrl("api-agora-1.symbl.ai");
-       symblParams.setApiConfig(apiConfig);
-
-       // Set the Symbl Confidence Level and Language Code
-       RealtimeStartRequest realtimeFlowInitRequest = new RealtimeStartRequest();
-       RealtimeAPIConfig realtimeAPIConfig = new RealtimeAPIConfig();
-realtimeAPIConfig.setConfidenceThreshold(Double.parseDouble("<symbl_confidence_threshold>"));
-realtimeAPIConfig.setLanguageCode("en-US");
-
-       // Set the Speaker information
-       Speaker speaker=new Speaker();
-       speaker.setName("<symbl_meeting_user_Name>");
-       speaker.setUserId("<symbl_meeting_UserId>");
-       realtimeFlowInitRequest.setSpeaker(speaker);
-
-       // Set the meeting encoding and speaker sample rate hertz
-       SpeechRecognition speechRecognition = new SpeechRecognition();
-       speechRecognition.setEncoding("<symbl_meeting_encoding>"));
-speechRecognition.setSampleRateHertz(Double.parseDouble("<symbl_meeting_sampleRateHertz>"));
-       realtimeAPIConfig.setSpeechRecognition(speechRecognition);
-
-       // Set the redaction content values
-       Redaction redaction = new Redaction();
-       redaction.setIdentifyContent(true);
-       redaction.setRedactContent(true);
-       redaction.setRedactionString("*****");
-       realtimeAPIConfig.setRedaction(redaction);
-
-       // Set the Tracker (custom business intent) information
-       realtimeFlowInitRequest.setConfig(realtimeAPIConfig);
-       Tracker tracker1 = new Tracker();
-       tracker1.setName("Budget");
-       List<String> vocabulary = new ArrayList<>();
-       vocabulary.add("budget");
-       vocabulary.add("budget decision");
-       tracker1.setVocabulary(vocabulary);
-       List<Tracker> trackerList = new ArrayList<>();
-       trackerList.add(tracker1);
-
-       // Set the Symbl conversation parameters
-       realtimeFlowInitRequest.setTrackers(trackerList);
-       realtimeFlowInitRequest.setType("start_request");
-       realtimeFlowInitRequest.setId("<symbl_unique_meetingId>");
-       realtimeFlowInitRequest.setSentiments(true);
-       realtimeFlowInitRequest.setInsightTypes(Arrays.asList("action_item", "question", "follow_up"));
-       symblParams.setRealtimeStartRequest(realtimeFlowInitRequest);
-       Gson gson = new Gson();
-       pluginParams.put("inputRequest", gson.toJson(symblParams));
-   } catch (Exception ex) {
-       Log.e(TAG, "ERROR while setting Symbl extension configuration");
-   }
-}
-```
-7. The seventh step is to update the `strings.xml` file with values for the following:
-
-* `symbl_app_id`
+Add your credentials for Symbl.ai here:
+*  `symbl_app_id`
 *  `symbl_app_secret`
-*  `symbl_platform_url`
-*  `symbl_token_api`
-*  `symbl_token_token_timeout_ms`
-*  `symbl_meeting_language-code`
-*  `symbl_meeting_encoding`
-*  `symbl_meeting_sampleRateHertz`
-*  `symbl_confidence_threshold`
+
+Add your credentials for Agora.io here:
+*  `agora_customer_app_id`
+*  `agora_token_value`
+
+5. The fifth step is to build your app. 
+
+6. The sixth step
 
 After updating those strings with values, the next step is to build the project. 
 
