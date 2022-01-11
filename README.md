@@ -3,7 +3,7 @@
 [![Websocket](https://img.shields.io/badge/symbl-websocket-brightgreen)](https://docs.symbl.ai/docs/streamingapi/overview/introduction)
 
 Symbl's APIs empower developers to enable: 
-- **Real-time** analysis of free-flowing discussions to automatically surface highly relevant summary discussion topics, contextual insights, suggestive action items, follow-ups, decisions, and questions.\
+- **Real-time** analysis of free-flowing discussions to automatically surface highly relevant summary discussion topics, contextual insights, suggestive action items, follow-ups, decisions, and questions.
 - **Voice APIs** that makes it easy to add AI-powered conversational intelligence to either [telephony][telephony] or [WebSocket][websocket] interfaces.
 - **Conversation APIs** that provide a REST interface for managing and processing your conversation data.
 - **Summary UI** with a fully customizable and editable reference experience that indexes a searchable transcript and shows generated actionable insights, topics, timecodes, and speaker information.
@@ -25,7 +25,7 @@ Symbl's APIs empower developers to enable:
 
 Through its partnership with Agora.io, Symbl.ai provides developers a Symbl.ai [Extension][symbl_extension] in the Agora.io Extension's [Marketplace][marketplace]. The Symbl.ai Extension enables Android developers to transform their existing Agora.ios voice, video, or text messaging apps into the next level of bleeding edge technology with Symbl.ai's Conversation Intelligence APIs. 
 
-In an effort to assist developers with digitally transforming their Agora.io voice, video or text messaging apps with Symbl.ai's Conversation Intelligence APIs, Symbl.a is hosting the following Android app, which is a sample application designed to demonstrate how you implement Symbl.ai's Conversation Intelligence APIs into an Android application with Agora.io.
+In an effort to assist developers with digitally transforming their Agora.io voice, video or text messaging apps with Symbl.ai's Conversation Intelligence APIs, Symbl.ai is hosting the following Android app, which is a sample application designed to demonstrate how you implement Symbl.ai's Conversation Intelligence APIs into an Android application with Agora.io.
 
 It is merely for demonstration purposes only but any one is free to refactor the application for their own particular use-cases. 
 
@@ -36,10 +36,10 @@ It is merely for demonstration purposes only but any one is free to refactor the
 * Java 11
 * Android API Level 29
 * Symbl.ai account from [Symbl][signup]'s platform.
-* Agora Account [Agora](https://sso.agora.io/en/v3/signup)
+* [Agora](https://sso.agora.io/en/v3/signup) Account
 
 ## Setup and Deploy
-1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console. After signing up on the console, activate your app.
+1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console]. After signing up on the console, activate your app.
 
 2. The second step to getting setup is to [sign up][signup] on both platforms, [Symbl][signup]'s and [Agora](https://sso.agora.io/en/v3/signup)'s. 
 
