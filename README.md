@@ -16,7 +16,7 @@ Symbl's APIs empower developers to enable:
 
  * [Introduction](#introduction)
  * [Pre-requisites](#pre-requisites)
- * [Setup and Deploy](#setupanddeploy)
+ * [Setup and Deploy](#setup-and-deploy)
  * [Dependencies](#dependencies)
  * [Conclusion](#conclusion)
  * [Community](#community)
