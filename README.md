@@ -32,7 +32,7 @@ It is merely for demonstration purposes only but any one is free to refactor the
 ### Pre-requisites
 
 * Android Studio 3.3 or above
-* Android device (e.g. Nexus 5X). A real device is recommended because some simulators have missing functionality or lack the performance necessary to run the sample. You will not be able to deploy the app to the Android Studio's emulator, since the emulator does not simulate access to hardware such as the camera or the microphone.
+* Android device (e.g. Pixel 5). A real device is recommended because some simulators have missing functionality or lack the performance necessary to run the sample. You will not be able to deploy the app to the Android Studio's emulator, since the emulator does not simulate access to hardware such as the camera or the microphone.
 * Java 11
 * Android API Level 29
 * Symbl.ai account from [Symbl][signup]'s platform.
