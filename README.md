@@ -39,9 +39,11 @@ It is merely for demonstration purposes only but any one is free to refactor the
 * [Agora](https://sso.agora.io/en/v3/signup) Account
 
 ## Setup and Deploy
-1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console]. After signing up on the console, activate your app.
+1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console]. 
 
-2. The second step to getting setup is to [sign up][signup] on both platforms, [Symbl][signup]'s and [Agora](https://sso.agora.io/en/v3/signup)'s. 
+2. The second step to getting setup is to activate your app. Upon activating your app, Agora.io automatically creates a Symbl.ai `appId` and `appSecret` for you to use in your app. To fetch those credential, press on the "View" in your project.
+
+![activation](./resources/activation.png)
 
 3. The third step is to clone the repo. Here is the link: 
 
