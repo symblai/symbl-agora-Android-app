@@ -44,14 +44,13 @@ It is merely for demonstration purposes only but any one is free to refactor the
 2. The second step to getting setup is to create and activate your project. Upon activating your project, Agora.io automatically retrieves the Symbl.ai appId and appSecret required to be used in your own app. To fetch those credentials, press on the "View" button in your project.
 
 ![activation](./resources/activation.png)
-g
+
 3. The third step is to clone the repo. Here is the link: 
 
 ```bash
 git clone git@github.com:symblai/symbl-agora-Android-app.git
 ```
-
-7. The fourth step is to update the `strings.xml` file with values for the following:
+4. The fourth step is to update the `strings.xml` file with values for the following:
 
 Add your credentials for Symbl.ai here:
 *  `symbl_app_id`
