@@ -62,11 +62,7 @@ Add your credentials for Agora.io here:
 
 5. The fifth step is to build your app is to navigate from Build -> Make Project. It will download all of the dependencies listed in the `build.gradle`, all of which are pre-loaded into the sample app. 
 
-6. The sixth step is to export the `.apk` to your phone. Navigate from Build -> Build Bundle(s) / APK. You will receive the following message:
-
-![gradle_notification](./resources/gradle_notification.png)
-
-If you successfully built the project, you find the `.apk` after clicking on `locate` in the notification. 
+6. The sixth step is to deploy to your Android device directly in the Run/Debug list of available devices.
 
 ## Dependencies
 
