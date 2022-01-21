@@ -25,6 +25,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/swipeRightIcon"
+        android:layout_width="@dimen/profile_icons_width"
+        android:layout_height="@dimen/profile_icons_height"
+        android:contentDescription="@string/swipe_right_icon"
+        android:src="@drawable/double_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/captions"
         android:layout_width="wrap_content"

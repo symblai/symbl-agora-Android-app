@@ -11,8 +11,8 @@
     <string name="string_enable">Enable</string>
     <string name="string_disable">Disable</string>
     <string name="support_char" translatable="false">qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890 !#$%()+-:;&lt;=.>?@[]^_{}|~,&amp;</string>
-    <string name="symbl_app_id">33646b47504f7237676d4e72475a7a38436f45395277595272597545686c4479</string>
-    <string name="symbl_app_secret">36474839764c6361706676514566695f3670555f66515a752d347443572d44343231796f73465672315679523437394e726b66763432647053336c3872724c49</string>
+    <string name="symbl_app_id"></string>
+    <string name="symbl_app_secret"></string>
     <string name="symbl_platform_url">api-agora-1.symbl.ai</string>
     <string name="symbl_token_api">https://api.symbl.ai/oauth2/token:generate</string>
     <string name="symbl_token_token_timeout_ms">20000</string>
@@ -21,8 +21,8 @@
     <string name="symbl_meeting_sampleRateHertz">44100</string>
     <string name="symbl_confidence_threshold">0.5</string>
 
-    <string name="agora_customer_app_id">b79ce05773df43ac9211244ed671db20</string>
-    <string name="agora_token_value">006b79ce05773df43ac9211244ed671db20IACQXBypwmX5DrQTBoAAgdVUhSi4+8Hm8HP0kspdHzT4k2d+1gUAAAAAEABKpBteNjpkYQEAAQA2OmRh</string>
+    <string name="agora_customer_app_id"></string>
+    <string name="agora_token_value"></string>
 
     <string name="mute">Mute</string>
     <string name="unMute">Unmute</string>
@@ -63,4 +63,5 @@
     <string name="redaction">Redaction</string>
     <string name="offset">Offset: </string>
     <string name="offsetText">123</string>
+    <string name="swipe_right_icon">swipe right icon</string>
 </resources>
