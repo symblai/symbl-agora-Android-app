@@ -128,14 +128,10 @@ public class AppPreferences extends AppCompatActivity {
         saveAppPreferences();
 
         Toast.makeText(AppPreferences.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     private boolean isValidPreferences() {
-        if (usernameText.getText().toString().length() < 8) {
-            usernameText.setError("Username should be minimum 8 characters long");
-            return false;
-        }
-
         boolean isValidEmail = Pattern.compile(EMAIL_REGEX, Pattern.CASE_INSENSITIVE)
                 .matcher(emailIdText.getText().toString())
                 .find();

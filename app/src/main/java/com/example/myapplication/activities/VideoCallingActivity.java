@@ -118,6 +118,9 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
 
         ImageView switchCameraButton = findViewById(R.id.switchCameraButton);
         switchCameraButton.setOnClickListener(this::onClickOfSwitchCameraButton);
+
+        ImageView swipeRightButton = findViewById(R.id.swipeRightIcon);
+        swipeRightButton.setOnClickListener(v -> displayResults());
     }
 
     private void onClickOfSwitchCameraButton(View view) {
@@ -283,10 +286,7 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
     public void onSwipe(SwipeDirection swipeDirection) {
         switch (swipeDirection) {
             case LEFT:
-                Intent intent = new Intent(VideoCallingActivity.this, ResultTabs.class);
-                intent.putExtra("results", results);
-                intent.putExtra("isTrackersEnabled", isTrackersEnabled);
-                startActivity(intent);
+                displayResults();
                 break;
 
             case RIGHT:
@@ -295,5 +295,12 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
                 System.out.println("on Dashboard Activity -  Swipe : " + swipeDirection.name()); // TODO :- Log gesture
                 break;
         }
+    }
+
+    private void displayResults() {
+        Intent intent = new Intent(VideoCallingActivity.this, ResultTabs.class);
+        intent.putExtra("results", results);
+        intent.putExtra("isTrackersEnabled", isTrackersEnabled);
+        startActivity(intent);
     }
 }
