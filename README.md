@@ -41,10 +41,10 @@ It is merely for demonstration purposes only but any one is free to refactor the
 ## Setup and Deploy
 1. The first step is to navigate to Agora.io's [console][console] where you sign up for a free developer account. After signing up on the console, navigate to Symbl.ai's Extension in Agora.io's Extension [Marketplace][marketplace], which re-routes you directly to Agora.io's [console][console]. 
 
-2. The second step to getting setup is to activate your app. Upon activating your project, Agora.io automatically retrieves the Symbl.ai appId and appSecret required to be used in your own app. To fetch those credentials, press on the "View" button in your project.
+2. The second step to getting setup is to create and activate your project. Upon activating your project, Agora.io automatically retrieves the Symbl.ai appId and appSecret required to be used in your own app. To fetch those credentials, press on the "View" button in your project.
 
 ![activation](./resources/activation.png)
-
+g
 3. The third step is to clone the repo. Here is the link: 
 
 ```bash
