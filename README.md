@@ -77,8 +77,6 @@ Since the sample app comes pre-loaded with all of its dependencies, you do not n
 
 Symbl.ai's Extension for the Agora.io marketplace ensures developers have the power to create Android apps with features from its Conversation Intelligence API platform. 
 
-Although Symbl.ai's Extension is operative for Android, Symbl.ai is open to contributions from the community for iOS. Symbl.ai, however, does have a web app for Agora.io that welcomes contributions from the community. 
-
 ## Community
 
 If you have any questions, feel free to reach out to us at devrelations@symbl.ai or thorugh our [Community Slack][slack].
