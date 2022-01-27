@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
     private FrameLayout localVideoContainer;
     private FrameLayout remoteVideoContainer;
     private RtcEngine mRtcEngine;
+    private SurfaceView mLocalView;
     private SurfaceView mRemoteView;
     private TextView captions;
     private ImageView toggleMuteButton;
@@ -106,6 +108,8 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         localVideoContainer = findViewById(R.id.local_video_view_container);
         remoteVideoContainer = findViewById(R.id.remote_video_view_container);
 
+        remoteVideoContainer.setOnClickListener(v -> switchCameraViews());
+
         captions = findViewById(R.id.captions);
         captions.setVisibility(View.INVISIBLE);
 
@@ -154,6 +158,7 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         createRtcEngine(config);
         //extension is enabled by default
         mRtcEngine.enableExtension(ExtensionManager.EXTENSION_VENDOR_NAME, ExtensionManager.EXTENSION_FILTER_NAME, true);
+        mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
         setupLocalVideo();
         VideoEncoderConfiguration configuration = new VideoEncoderConfiguration(640, 360,
                 VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_24,
@@ -184,49 +189,31 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
     private IRtcEngineEventHandler getRtcEventHandler() {
         return new IRtcEngineEventHandler() {
             @Override
-            public void onJoinChannelSuccess(String s, int i, int i1) {
-                Log.d(TAG, "on Join Channel Success");
+            public void onJoinChannelSuccess(String channel, final int uid, int elapsed) {
+                Log.d(TAG, "Join channel success, uid: " + (uid & 0xFFFFFFFFL) + " channel: " + channel);
                 mRtcEngine.startPreview();
                 JSONObject symblPluginConfigs = symblService.getSymblPluginConfigs(agoraConfiguration.getCustomerChannelName());
                 mRtcEngine.setExtensionProperty(ExtensionManager.EXTENSION_VENDOR_NAME, ExtensionManager.EXTENSION_FILTER_NAME, "init", symblPluginConfigs.toString());
             }
 
             @Override
-            public void onFirstRemoteVideoDecoded(final int i, int i1, int i2, int i3) {
-                super.onFirstRemoteVideoDecoded(i, i1, i2, i3);
-                Log.d(TAG, "onFirstRemoteVideoDecoded  uid = " + i);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        setupRemoteVideo(i);
-                    }
-                });
+            public void onUserJoined(final int uid, int elapsed) {
+                Log.d(TAG, "First remote video decoded, uid: " + (uid & 0xFFFFFFFFL));
+                runOnUiThread(() -> setupRemoteVideo(uid));
             }
 
             @Override
-            public void onUserJoined(int i, int i1) {
-                super.onUserJoined(i, i1);
-                Log.d(TAG, "onUserJoined  uid = " + i);
-            }
-
-            @Override
-            public void onUserOffline(final int i, int i1) {
-                super.onUserOffline(i, i1);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        onRemoteUserLeft();
-                    }
-                });
+            public void onUserOffline(final int uid, int reason) {
+                Log.d(TAG, "User offline, uid: " + (uid & 0xFFFFFFFFL));
+                runOnUiThread(() -> onRemoteUserLeft(uid));
             }
         };
     }
 
     private void setupLocalVideo() {
-        SurfaceView view = RtcEngine.CreateRendererView(this);
-        view.setZOrderMediaOverlay(true);
-        localVideoContainer.addView(view);
-        mRtcEngine.setupLocalVideo(new VideoCanvas(view, VideoCanvas.RENDER_MODE_HIDDEN, 0));
+        mLocalView = RtcEngine.CreateRendererView(this);
+        localVideoContainer.addView(mLocalView);
+        mRtcEngine.setupLocalVideo(new VideoCanvas(mLocalView, VideoCanvas.RENDER_MODE_HIDDEN, 0));
         mRtcEngine.setLocalRenderMode(Constants.RENDER_MODE_HIDDEN);
     }
 
@@ -234,6 +221,7 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         // Only one remote video view is available for this
         // tutorial. Here we check if there exists a surface
         // view tagged as this uid.
+        Log.d(TAG, " setupRemoteVideo uid: " + (uid & 0xFFFFFFFFL));
         int count = remoteVideoContainer.getChildCount();
         View view = null;
         for (int i = 0; i < count; i++) {
@@ -249,13 +237,15 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
 
         Log.d(TAG, " setupRemoteVideo uid = " + uid);
         mRemoteView = RtcEngine.CreateRendererView(getBaseContext());
+        mRemoteView.setTag(uid);
         remoteVideoContainer.addView(mRemoteView);
         mRtcEngine.setupRemoteVideo(new VideoCanvas(mRemoteView, VideoCanvas.RENDER_MODE_HIDDEN, uid));
         mRtcEngine.setRemoteRenderMode(uid, Constants.RENDER_MODE_HIDDEN);
-        mRemoteView.setTag(uid);
+        switchCameraViews();
     }
 
-    private void onRemoteUserLeft() {
+    private void onRemoteUserLeft(int uid) {
+        switchCameraViews();
         removeRemoteVideo();
     }
 
@@ -264,6 +254,36 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
             remoteVideoContainer.removeView(mRemoteView);
         }
         mRemoteView = null;
+    }
+
+    private ViewGroup removeFromParent(SurfaceView view) {
+        if (view == null || view.getParent() == null) {
+            return null;
+        }
+
+        ViewGroup parent = (ViewGroup) view.getParent();
+        parent.removeView(view);
+        return parent;
+    }
+
+    private void switchView(SurfaceView view) {
+        ViewGroup parent = removeFromParent(view);
+        if (parent == localVideoContainer) {
+//            view.setZOrderOnTop(true);
+            remoteVideoContainer.addView(view);
+        } else if (parent == remoteVideoContainer) {
+//            view.setZOrderOnTop(false);
+            localVideoContainer.addView(view);
+        }
+    }
+
+    private void switchCameraViews() {
+        if (mLocalView == null || mRemoteView == null) {
+            return;
+        }
+
+        switchView(mLocalView);
+        switchView(mRemoteView);
     }
 
     private void enableEffect() {
