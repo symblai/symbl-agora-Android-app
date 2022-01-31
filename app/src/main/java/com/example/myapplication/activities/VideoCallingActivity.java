@@ -148,40 +148,43 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         }
     }
 
-    private void initializeAgoraEngine() {
+    private RtcEngineConfig getRtcEngineConfig() {
         RtcEngineConfig config = new RtcEngineConfig();
         config.mContext = VideoCallingActivity.this;
         config.mAppId = agoraConfiguration.getCustomerAppId();
         config.addExtension(ExtensionManager.EXTENSION_NAME);
         config.mExtensionObserver = new AgoraExtensionObserver(VideoCallingActivity.this, results, captions);
         config.mEventHandler = getRtcEventHandler();
+        return config;
+    }
+
+    private void initializeAgoraEngine() {
+        RtcEngineConfig config = getRtcEngineConfig();
         createRtcEngine(config);
         //extension is enabled by default
         mRtcEngine.enableExtension(ExtensionManager.EXTENSION_VENDOR_NAME, ExtensionManager.EXTENSION_FILTER_NAME, true);
-        mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
         setupLocalVideo();
-        VideoEncoderConfiguration configuration = new VideoEncoderConfiguration(640, 360,
+        setupVideoStreamingSession();
+        Log.d(TAG, "Channel Name : " + agoraConfiguration.getCustomerChannelName());
+        mRtcEngine.joinChannel(agoraConfiguration.getTokenValue(), agoraConfiguration.getCustomerChannelName(), agoraConfiguration.getMeetingId(), 0);
+
+    }
+
+    private void setupVideoStreamingSession() {
+        mRtcEngine.setChannelProfile(Constants.CHANNEL_PROFILE_COMMUNICATION);
+        VideoEncoderConfiguration configuration = new VideoEncoderConfiguration(VideoEncoderConfiguration.VD_640x480,
                 VideoEncoderConfiguration.FRAME_RATE.FRAME_RATE_FPS_24,
                 VideoEncoderConfiguration.STANDARD_BITRATE,
                 VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT);
         mRtcEngine.setVideoEncoderConfiguration(configuration);
-        mRtcEngine.setClientRole(Constants.AUDIO_ENCODED_FRAME_OBSERVER_POSITION_MIC);
-        mRtcEngine.enableLocalAudio(true);
-        mRtcEngine.setEnableSpeakerphone(true);
-        mRtcEngine.setAudioProfile(1);
-        mRtcEngine.enableAudio();
-        Log.d(TAG, "Channel Name : " + agoraConfiguration.getCustomerChannelName());
-        mRtcEngine.joinChannel(agoraConfiguration.getTokenValue(), agoraConfiguration.getCustomerChannelName(), agoraConfiguration.getMeetingId(), 0);
-        mRtcEngine.startPreview();
-
+        mRtcEngine.enableVideo();
     }
 
     private void createRtcEngine(RtcEngineConfig config) {
         try {
             mRtcEngine = RtcEngine.create(config);
         } catch (Exception e) {
-            e.printStackTrace();
-            Log.e(TAG, " ERROR:: RTC engine startup error " + e.getMessage());
+            Log.e(TAG, " ERROR:: RTC engine startup error " + e.getMessage(), e);
         }
     }
 
