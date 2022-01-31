@@ -177,7 +177,13 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
                 VideoEncoderConfiguration.STANDARD_BITRATE,
                 VideoEncoderConfiguration.ORIENTATION_MODE.ORIENTATION_MODE_FIXED_PORTRAIT);
         mRtcEngine.setVideoEncoderConfiguration(configuration);
+        mRtcEngine.setClientRole(Constants.AUDIO_ENCODED_FRAME_OBSERVER_POSITION_MIC);
+        mRtcEngine.enableLocalAudio(true);
+        mRtcEngine.setEnableSpeakerphone(true);
+        mRtcEngine.setAudioProfile(1);
+        mRtcEngine.enableAudio();
         mRtcEngine.enableVideo();
+        mRtcEngine.startPreview();
     }
 
     private void createRtcEngine(RtcEngineConfig config) {
@@ -272,10 +278,10 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
     private void switchView(SurfaceView view) {
         ViewGroup parent = removeFromParent(view);
         if (parent == localVideoContainer) {
-//            view.setZOrderOnTop(true);
+            view.setZOrderMediaOverlay(true);
             remoteVideoContainer.addView(view);
         } else if (parent == remoteVideoContainer) {
-//            view.setZOrderOnTop(false);
+            view.setZOrderOnTop(false);
             localVideoContainer.addView(view);
         }
     }
