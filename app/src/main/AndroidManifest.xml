@@ -21,25 +21,31 @@
         <activity
             android:name=".activities.app_preferences.AppPreferences"
             android:exported="true"
-            android:parentActivityName=".activities.Dashboard" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.Dashboard"/>
         <activity
             android:name=".activities.CreateRoom"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
             android:name=".activities.VideoCallingActivity"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity
             android:name=".activities.result_tabs.ResultTabs"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:label="@string/title_activity_result_tabs" />
         <activity
             android:name=".activities.Dashboard"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
