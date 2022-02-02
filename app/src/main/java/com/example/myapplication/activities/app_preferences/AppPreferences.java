@@ -1,6 +1,5 @@
 package com.example.myapplication.activities.app_preferences;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -28,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myapplication.R;
 import com.example.myapplication.entity.TrackerEntity;
 import com.example.myapplication.models.ApplicationPreferences;
+import com.example.myapplication.utils.AppUtils;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.gson.Gson;
 
@@ -222,7 +221,7 @@ public class AppPreferences extends AppCompatActivity {
         if (value.length() > 0 && !vocabulary.contains(value)) {
             vocabulary.add(value);
         }
-        hideKeyboard(vocabularyText);
+        AppUtils.hideKeyboard(vocabularyText);
         vocabularyText.clearFocus();
         vocabularyText.getText().clear();
     }
@@ -239,13 +238,6 @@ public class AppPreferences extends AppCompatActivity {
         overridePendingTransition(0, 0);
         startActivity(getIntent());
         overridePendingTransition(0, 0);
-    }
-
-    private void hideKeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (inputMethodManager.isAcceptingText()) {
-            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-        }
     }
 
     private String[] getTrackerNames() {
