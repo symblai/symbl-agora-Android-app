@@ -32,6 +32,7 @@ public class TranscriptsViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TranscriptsViewHolder transcriptsViewHolder = (TranscriptsViewHolder) holder;
+        transcriptsViewHolder.getUsername().setText(data.get(position).getUsername());
         transcriptsViewHolder.getDatum().setText(data.get(position).getData());
         transcriptsViewHolder.getTimestamp().setText(getParsedTimestamp(data.get(position).getDate()));
     }

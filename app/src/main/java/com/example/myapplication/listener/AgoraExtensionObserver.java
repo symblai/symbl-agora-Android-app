@@ -106,7 +106,7 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
         context.runOnUiThread(() -> {
             if (transcript != null) {
                 captions.setVisibility(View.VISIBLE);
-                captions.setText(transcript.getData());
+                captions.setText(String.format("%s: %s", transcript.getUsername(), transcript.getData()));
 
                 new Handler().postDelayed(() -> {
                     if (new Date().getTime() - transcript.getDate().getTime() >= 2000) {
@@ -132,7 +132,7 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
                 break;
 
             case RECOGNITION_RESULT:
-                transcript = new Transcript(symblResult.getMessage().getPunctuated().getTranscript());
+                transcript = new Transcript(symblResult.getMessage().getUser().getName(), symblResult.getMessage().getPunctuated().getTranscript());
                 if (symblResult.getMessage().isFinal()) {
                     results.add(transcript);
                 }

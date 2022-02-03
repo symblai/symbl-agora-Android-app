@@ -10,10 +10,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Transcript implements ResultItem {
+    private String username;
     private String data;
     private Date date;
 
-    public Transcript(String data) {
+    public Transcript(String username, String data) {
+        this.username = username;
         this.data = data;
         this.date = new Date();
     }
