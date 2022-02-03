@@ -22,6 +22,7 @@ import com.example.myapplication.config.AgoraConfiguration;
 import com.example.myapplication.config.SymblConfiguration;
 import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.services.ValidationService;
+import com.example.myapplication.utils.AppUtils;
 import com.google.gson.Gson;
 
 import java.util.Collections;
@@ -72,7 +73,7 @@ public class Dashboard extends AppCompatActivity {
             Toast.makeText(Dashboard.this, "Please update your app preferences before proceeding.", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        AppUtils.hideKeyboard(view);
         Intent intent = new Intent(Dashboard.this, VideoCallingActivity.class);
         intent.putExtra("roomName", roomName.getText().toString());
         intent.putExtra("symblConfiguration", getSymblConfiguration());

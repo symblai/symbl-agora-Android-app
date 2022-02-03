@@ -82,7 +82,6 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
 
         if (permissionService.requiredPermissionGranted(VideoCallingActivity.this)) {
             initializeAgoraEngine();
-            enableEffect();
         }
     }
 
@@ -100,7 +99,6 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == PERMISSION_REQUEST_ID && permissionService.requiredPermissionGranted(VideoCallingActivity.this)) {
             initializeAgoraEngine();
-            enableEffect();
         }
     }
 
@@ -167,7 +165,6 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         setupVideoStreamingSession();
         Log.d(TAG, "Channel Name : " + agoraConfiguration.getCustomerChannelName());
         mRtcEngine.joinChannel(agoraConfiguration.getTokenValue(), agoraConfiguration.getCustomerChannelName(), agoraConfiguration.getMeetingId(), 0);
-
     }
 
     private void setupVideoStreamingSession() {
@@ -201,8 +198,11 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
             public void onJoinChannelSuccess(String channel, final int uid, int elapsed) {
                 Log.d(TAG, "Join channel success, uid: " + (uid & 0xFFFFFFFFL) + " channel: " + channel);
                 mRtcEngine.startPreview();
-                JSONObject symblPluginConfigs = symblService.getSymblPluginConfigs(agoraConfiguration.getCustomerChannelName());
-                mRtcEngine.setExtensionProperty(ExtensionManager.EXTENSION_VENDOR_NAME, ExtensionManager.EXTENSION_FILTER_NAME, "init", symblPluginConfigs.toString());
+                new Thread(() -> {
+                    initializeEffect();
+                    enableEffect();
+                }).start();
+
             }
 
             @Override
@@ -293,6 +293,11 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
 
         switchView(mLocalView);
         switchView(mRemoteView);
+    }
+
+    private void initializeEffect() {
+        JSONObject symblPluginConfigs = symblService.getSymblPluginConfigs(agoraConfiguration.getCustomerChannelName());
+        mRtcEngine.setExtensionProperty(ExtensionManager.EXTENSION_VENDOR_NAME, ExtensionManager.EXTENSION_FILTER_NAME, "init", symblPluginConfigs.toString());
     }
 
     private void enableEffect() {

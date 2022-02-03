@@ -18,6 +18,7 @@ import com.example.myapplication.constants.InsightType;
 import com.example.myapplication.entity.TrackerEntity;
 import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.services.ValidationService;
+import com.example.myapplication.utils.AppUtils;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class CreateRoom extends AppCompatActivity {
             Toast.makeText(CreateRoom.this, "Please update your app preferences before proceeding.", Toast.LENGTH_SHORT).show();
             return;
         }
-
+        AppUtils.hideKeyboard(view);
         Intent intent = new Intent(CreateRoom.this, VideoCallingActivity.class);
         intent.putExtra("roomName", roomName.getText().toString());
         intent.putExtra("symblConfiguration", getSymblConfiguration());
