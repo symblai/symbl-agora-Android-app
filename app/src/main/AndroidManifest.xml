@@ -21,8 +21,8 @@
         <activity
             android:name=".activities.app_preferences.AppPreferences"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".activities.Dashboard"/>
+            android:parentActivityName=".activities.Dashboard"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.CreateRoom"
             android:exported="false"
@@ -36,12 +36,12 @@
         <activity
             android:name=".activities.result_tabs.ResultTabs"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_result_tabs" />
+            android:label="@string/title_activity_result_tabs"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.Dashboard"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="true"

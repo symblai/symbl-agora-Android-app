@@ -1,7 +1,6 @@
 package com.example.myapplication.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +18,6 @@ import com.example.myapplication.entity.TrackerEntity;
 import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.services.ValidationService;
 import com.example.myapplication.utils.AppUtils;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collections;

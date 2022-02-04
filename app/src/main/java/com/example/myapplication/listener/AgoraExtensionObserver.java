@@ -35,8 +35,8 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
     private final Results results;
     private final Activity context;
     private final TextView captions;
-    private Transcript transcript;
     private final ApplicationPreferences applicationPreferences;
+    private Transcript transcript;
 
     public AgoraExtensionObserver(Activity context, Results results, TextView captions) {
         this.context = context;
