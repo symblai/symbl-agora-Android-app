@@ -31,6 +31,7 @@ public class InsightsTab extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new InsightsViewAdapter(insights));
+        recyclerView.scrollToPosition(insights.size() - 1);
         return view;
     }
 }

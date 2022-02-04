@@ -30,6 +30,7 @@ public class TranscriptTab extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new TranscriptsViewAdapter(transcripts));
+        recyclerView.scrollToPosition(transcripts.size() - 1);
         return view;
     }
 }

@@ -29,6 +29,7 @@ public class TrackersTab extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new TrackersViewAdapter(trackers));
+        recyclerView.scrollToPosition(trackers.size() - 1);
         return view;
     }
 }

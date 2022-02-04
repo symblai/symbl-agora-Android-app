@@ -1,7 +1,6 @@
 package com.example.myapplication.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -23,7 +22,6 @@ import com.example.myapplication.config.SymblConfiguration;
 import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.services.ValidationService;
 import com.example.myapplication.utils.AppUtils;
-import com.google.gson.Gson;
 
 import java.util.Collections;
 import java.util.Objects;
@@ -41,7 +39,7 @@ public class Dashboard extends AppCompatActivity {
 
         showCustomizedActionBar();
 
-        appPreferences = getAppPreferences();
+        appPreferences = AppUtils.getAppPreferences(Dashboard.this);
         validationService = new ValidationService();
         roomName = findViewById(R.id.roomName);
         Button joinRoomButton = findViewById(R.id.joinRoomButton);
@@ -60,7 +58,7 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        appPreferences = getAppPreferences();
+        appPreferences = AppUtils.getAppPreferences(Dashboard.this);
     }
 
     private void onClickOfJoinRoomButton(View view) {
@@ -101,12 +99,6 @@ public class Dashboard extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    private ApplicationPreferences getAppPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
-        String value = sharedPreferences.getString(getString(R.string.app_preferences), getString(R.string.empty_json));
-        return new Gson().fromJson(value, ApplicationPreferences.class);
     }
 
     private SymblConfiguration getSymblConfiguration() {

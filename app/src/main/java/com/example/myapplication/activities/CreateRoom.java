@@ -1,7 +1,6 @@
 package com.example.myapplication.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +18,6 @@ import com.example.myapplication.entity.TrackerEntity;
 import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.services.ValidationService;
 import com.example.myapplication.utils.AppUtils;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,7 +40,7 @@ public class CreateRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_room);
 
-        appPreferences = getAppPreferences();
+        appPreferences = AppUtils.getAppPreferences(CreateRoom.this);
         String passedRoomName = getIntent().getExtras().getString("roomName");
         validationService = new ValidationService();
         roomName = findViewById(R.id.roomName);
@@ -76,12 +74,6 @@ public class CreateRoom extends AppCompatActivity {
         intent.putExtra("isTrackersEnabled", trackers.isChecked());
         startActivity(intent);
         finish();
-    }
-
-    private ApplicationPreferences getAppPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
-        String value = sharedPreferences.getString(getString(R.string.app_preferences), getString(R.string.empty_json));
-        return new Gson().fromJson(value, ApplicationPreferences.class);
     }
 
     private SymblConfiguration getSymblConfiguration() {

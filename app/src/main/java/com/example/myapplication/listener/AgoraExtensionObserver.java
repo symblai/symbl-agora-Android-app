@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.myapplication.constants.SymblResultType;
+import com.example.myapplication.constants.UserType;
+import com.example.myapplication.models.ApplicationPreferences;
 import com.example.myapplication.models.results.Insight;
 import com.example.myapplication.models.results.Results;
 import com.example.myapplication.models.results.Topic;
@@ -16,6 +18,8 @@ import com.example.myapplication.models.symbl.results.Match;
 import com.example.myapplication.models.symbl.results.MessageReference;
 import com.example.myapplication.models.symbl.results.SymblResult;
 import com.example.myapplication.models.symbl.results.TrackerDetails;
+import com.example.myapplication.models.symbl.results.User;
+import com.example.myapplication.utils.AppUtils;
 import com.google.gson.Gson;
 
 import java.util.Date;
@@ -28,15 +32,17 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
 
     private static final String TAG = "AgoraExtensionObserver:";
 
-    private Results results;
-    private Activity context;
-    private TextView captions;
+    private final Results results;
+    private final Activity context;
+    private final TextView captions;
+    private final ApplicationPreferences applicationPreferences;
     private Transcript transcript;
 
     public AgoraExtensionObserver(Activity context, Results results, TextView captions) {
         this.context = context;
         this.results = results;
         this.captions = captions;
+        this.applicationPreferences = AppUtils.getAppPreferences(context);
     }
 
     @Override
@@ -132,7 +138,8 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
                 break;
 
             case RECOGNITION_RESULT:
-                transcript = new Transcript(symblResult.getMessage().getUser().getName(), symblResult.getMessage().getPunctuated().getTranscript());
+                UserType userType = getUserType(symblResult.getMessage().getUser());
+                transcript = new Transcript(symblResult.getMessage().getUser().getName(), userType, symblResult.getMessage().getPunctuated().getTranscript());
                 if (symblResult.getMessage().isFinal()) {
                     results.add(transcript);
                 }
@@ -147,6 +154,13 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
                 }
                 break;
         }
+    }
+
+    private UserType getUserType(User user) {
+        if (applicationPreferences.getEmailId().equals(user.getUserId()) && applicationPreferences.getUsername().equals(user.getName())) {
+            return UserType.SENDER;
+        }
+        return UserType.RECEIVER;
     }
 
     private SymblResultType getResultType(SymblResult symblResult) {
