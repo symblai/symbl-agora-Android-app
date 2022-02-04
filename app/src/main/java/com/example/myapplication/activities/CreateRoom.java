@@ -42,7 +42,7 @@ public class CreateRoom extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_room);
 
-        appPreferences = getAppPreferences();
+        appPreferences = AppUtils.getAppPreferences(CreateRoom.this);
         String passedRoomName = getIntent().getExtras().getString("roomName");
         validationService = new ValidationService();
         roomName = findViewById(R.id.roomName);
@@ -76,12 +76,6 @@ public class CreateRoom extends AppCompatActivity {
         intent.putExtra("isTrackersEnabled", trackers.isChecked());
         startActivity(intent);
         finish();
-    }
-
-    private ApplicationPreferences getAppPreferences() {
-        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.app_name), MODE_PRIVATE);
-        String value = sharedPreferences.getString(getString(R.string.app_preferences), getString(R.string.empty_json));
-        return new Gson().fromJson(value, ApplicationPreferences.class);
     }
 
     private SymblConfiguration getSymblConfiguration() {

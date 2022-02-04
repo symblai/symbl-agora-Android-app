@@ -102,6 +102,13 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        disableEffect();
+        finish();
+    }
+
     private void initializeUI() {
         localVideoContainer = findViewById(R.id.local_video_view_container);
         remoteVideoContainer = findViewById(R.id.remote_video_view_container);
@@ -198,10 +205,7 @@ public class VideoCallingActivity extends AppCompatActivity implements SimpleGes
             public void onJoinChannelSuccess(String channel, final int uid, int elapsed) {
                 Log.d(TAG, "Join channel success, uid: " + (uid & 0xFFFFFFFFL) + " channel: " + channel);
                 mRtcEngine.startPreview();
-                new Thread(() -> {
-                    initializeEffect();
-                    enableEffect();
-                }).start();
+                new Thread(() -> enableEffect()).start();
 
             }
 

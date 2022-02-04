@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.constants.UserType;
 import com.example.myapplication.models.results.Transcript;
 
 import java.text.SimpleDateFormat;
@@ -25,7 +26,8 @@ public class TranscriptsViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.transcript_item, parent, false);
+        int transcript_item = viewType == UserType.SENDER.getValue() ? R.layout.transcript_item_sent : R.layout.transcript_item_recieved;
+        View view = LayoutInflater.from(parent.getContext()).inflate(transcript_item, parent, false);
         return new TranscriptsViewHolder(view);
     }
 
@@ -40,6 +42,11 @@ public class TranscriptsViewAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return data.get(position).getUserType().getValue();
     }
 
     private String getParsedTimestamp(Date date) {

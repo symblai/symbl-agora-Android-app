@@ -30,6 +30,7 @@ public class TopicsTab extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(new TopicsViewAdapter(topics));
+        recyclerView.scrollToPosition(topics.size() - 1);
         return view;
     }
 }
