@@ -48,7 +48,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     // Symbl Extension
-    implementation 'ai.symbl:android.extension:0.0.3'
+    implementation 'ai.symbl:android.extension:1.0.0'
 
     // Dependencies required for Agora SDK
     implementation fileTree(include: ['*.jar'], dir: 'libs')
