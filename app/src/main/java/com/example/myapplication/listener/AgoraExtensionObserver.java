@@ -123,6 +123,21 @@ public class AgoraExtensionObserver implements IMediaExtensionObserver {
         });
     }
 
+    @Override
+    public void onStarted(String s, String s1) {
+        Log.i(TAG, "onStarted -> " + s + " : " + s1);
+    }
+
+    @Override
+    public void onStopped(String s, String s1) {
+        Log.i(TAG, "onStopped -> " + s + " : " + s1);
+    }
+
+    @Override
+    public void onError(String s, String s1, int i, String s2) {
+        Log.i(TAG, "onError -> " + s + " : " + s1 + " : " + i + " : " + s2);
+    }
+
     private void addResults(SymblResult symblResult) {
         SymblResultType type = getResultType(symblResult);
         switch (type) {
