@@ -10,7 +10,7 @@ android {
         minSdk 21
         targetSdk 31
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,7 +47,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
     // Symbl Extension
-     implementation 'ai.symbl:android.extension:1.0.0'
+     implementation 'ai.symbl:android.extension:2.0.0'
 
     // Dependencies required for Agora SDK
     implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
